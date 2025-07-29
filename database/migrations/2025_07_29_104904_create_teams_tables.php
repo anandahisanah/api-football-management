@@ -16,7 +16,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             // column
             $table->string('name');
-            $table->string('logo_url');
+            $table->string('logo_url')->nullable();
             $table->string('found_year');
             $table->string('address');
             $table->string('city');
@@ -28,7 +28,7 @@ return new class extends Migration
             // pk
             $table->uuid('id')->primary();
             // fk
-            $table->foreignId('team_id')->constrained('teams')->onDelete('cascade');
+            $table->foreignUuid('team_id')->constrained('teams')->onDelete('cascade');
             // column
             $table->string('name');
             $table->string('body_height');
@@ -43,8 +43,8 @@ return new class extends Migration
             // pk
             $table->uuid('id')->primary();
             // fk
-            $table->foreignId('home_team_id')->constrained('teams')->onDelete('cascade');
-            $table->foreignId('away_team_id')->constrained('teams')->onDelete('cascade');
+            $table->foreignUuid('home_team_id')->constrained('teams')->onDelete('cascade');
+            $table->foreignUuid('away_team_id')->constrained('teams')->onDelete('cascade');
             // column
             $table->string('location');
             $table->dateTime('datetime');
@@ -56,9 +56,9 @@ return new class extends Migration
             // pk
             $table->uuid('id')->primary();
             // fk
-            $table->foreignId('game_id')->constrained('games')->onDelete('cascade');
-            $table->foreignId('team_id')->constrained('teams')->onDelete('cascade');
-            $table->foreignId('player_id')->constrained('players')->onDelete('cascade');
+            $table->foreignUuid('game_id')->constrained('games')->onDelete('cascade');
+            $table->foreignUuid('team_id')->constrained('teams')->onDelete('cascade');
+            $table->foreignUuid('player_id')->constrained('players')->onDelete('cascade');
             // column
             $table->dateTime('datetime');
             $table->timestamps();
