@@ -46,8 +46,9 @@ class GameSeeder extends Seeder
         for ($i = 1; $i <= $total; $i++) {
             Team::create([
                 // column
-                'name' => $faker->lastName() . ' FC',
-                'found_year' => $faker->year(),
+                'name' => "{$faker->lastName()} FC",
+                'logo_url' => "https://picsum.photos/id/{$i}/200/200",
+                'founding_year' => $faker->year(),
                 'address' => $faker->address,
                 'city' => $faker->city,
             ]);
@@ -64,8 +65,8 @@ class GameSeeder extends Seeder
     function createPlayer()
     {
         // read json
-        $jsonPath = database_path('data/player_positions.json');
-        $positions = json_decode(File::get($jsonPath), true);
+        $json_path = database_path('data/player_positions.json');
+        $positions = json_decode(File::get($json_path), true);
 
         if (empty($positions)) {
             echo "Warning: player_positions.json is empty or invalid.\n";
