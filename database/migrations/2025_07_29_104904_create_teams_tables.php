@@ -17,7 +17,7 @@ return new class extends Migration
             // column
             $table->string('name');
             $table->string('logo_url')->nullable();
-            $table->string('found_year');
+            $table->string('founding_year');
             $table->string('address');
             $table->string('city');
             $table->timestamps();
@@ -31,10 +31,10 @@ return new class extends Migration
             $table->foreignUuid('team_id')->constrained('teams')->onDelete('cascade');
             // column
             $table->string('name');
-            $table->string('body_height');
-            $table->string('body_weight');
+            $table->integer('body_height');
+            $table->integer('body_weight');
             $table->string('position');
-            $table->string('back_number');
+            $table->integer('back_number');
             $table->timestamps();
             $table->softDeletes();
         });
