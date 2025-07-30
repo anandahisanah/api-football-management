@@ -20,6 +20,10 @@ class Score extends Model
         'datetime',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime', 
+    ];
+
     public function game()
     {
         return $this->belongsTo(related: Game::class);

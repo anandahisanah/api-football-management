@@ -15,7 +15,7 @@ class Team extends Model
         // column
         'name',
         'logo_url',
-        'found_year',
+        'founding_year',
         'address',
         'city',
     ];

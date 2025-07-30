@@ -20,6 +20,10 @@ class Game extends Model
         'datetime',
     ];
 
+    protected $casts = [
+        'datetime' => 'datetime',
+    ];
+
     public function home_team()
     {
         return $this->belongsTo(Team::class, 'home_team_id', 'id');
