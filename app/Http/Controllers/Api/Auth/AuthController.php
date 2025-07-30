@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ *
+ * @tags Auth
+ *
+ */
 class AuthController extends Controller
 {
      /**
