@@ -30,3 +30,7 @@ This app using tech stack as:
 ## Serve Project
 
 1. Run `php artisan serve`
+
+## Documentation API
+
+1. Open your browser and visit `http://127.0.0.1:8000/docs/api`
